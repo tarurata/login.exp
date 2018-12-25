@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+set timeout 1
+spawn /usr/bin/ssh root@xxx.xxx.xxx.xxx
+expect \"#\"
+send "cd /var/www/html/\n"
+expect \"#\"
+send "screen\n"
+expect \"#\"
+
+# code for ctrl+a
+send "\x01"
+send "c"
+
+interact
+
